@@ -10,6 +10,7 @@ from flask_jwt_extended import (
 )
 import enum
 from datetime import datetime
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -20,6 +21,8 @@ db = SQLAlchemy(app)
 jwt = JWTManager(app)
 ma = Marshmallow(app)
 api = Api(app)
+CORS(app)
+app.config['CORS_AUTOMATIC_OPTIONS'] = True
 
 # model
 class User(db.Model):
