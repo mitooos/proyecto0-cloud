@@ -21,14 +21,14 @@ const EventoDetail = () => {
   const getEvento = async () => {
     if (!id) return;
     const resp = await axiosAuthInstance.get(
-      "http://localhost:5000/eventos/" + id
+      "http://172.24.98.148:8080/eventos/" + id
     );
     setEvento(resp.data);
     console.log(resp);
   };
 
   const deleteEvento = async () => {
-    await axiosAuthInstance.delete("http://localhost:5000/eventos/" + id);
+    await axiosAuthInstance.delete("http://172.24.98.148:8080/eventos/" + id);
     window.location = "/eventos";
   };
 

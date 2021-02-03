@@ -35,7 +35,7 @@ const CreateEvento = () => {
   const getEvento = async () => {
     if (!id) return;
     const resp = await axiosAuthInstance.get(
-      "http://localhost:5000/eventos/" + id
+      "http://172.24.98.148:8080/eventos/" + id
     );
     console.log(resp);
     setEvento(resp.data);
@@ -85,7 +85,7 @@ const CreateEvento = () => {
     evento.fecha_fin = evento.fecha_fin.split("T")[0];
     evento.fecha_inicio = evento.fecha_inicio.split("T")[0];
     const resp = await axiosAuthInstance.put(
-      "http://localhost:5000/eventos/" + id,
+      "http://172.24.98.148:8080/eventos/" + id,
       evento
     );
     console.log(resp);

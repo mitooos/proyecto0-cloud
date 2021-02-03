@@ -60,7 +60,7 @@ const CreateEvento = () => {
   const create = async () => {
     console.log(evento);
     const resp = await axiosAuthInstance.post(
-      "http://localhost:5000/eventos",
+      "http://172.24.98.148:8080/eventos",
       evento
     );
     console.log(resp);

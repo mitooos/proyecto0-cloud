@@ -12,7 +12,9 @@ const EventosList = () => {
   const [eventos, setEventos] = useState([]);
 
   const getEventos = async () => {
-    const resp = await axiosAuthInstance.get("http://localhost:5000/eventos");
+    const resp = await axiosAuthInstance.get(
+      "http://172.24.98.148:8080/eventos"
+    );
     setEventos(resp.data);
   };
 
